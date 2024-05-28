@@ -6,13 +6,15 @@ import { motion } from "framer-motion";
 function Header() {
   const motionProps = {
     whileHover: { scale: 1.15 },
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
     transition: { type: "spring", stiffness: 90 },
   };
 
   const textHoverProps = {
-    whileHover: { color: "#E9B24C" },
+    whileHover: { 
+      color: "#E9B24C", 
+      textDecoration: "underline",
+      textUnderlineOffset: "6px"
+    },
   };
 
   return (
