@@ -5,31 +5,36 @@ import { motion } from "framer-motion";
 
 function Header() {
   const motionProps = {
-    whileHover: { scale: 1.15, color: "#97C6CF" },
+    whileHover: { scale: 1.15 },
     initial: { opacity: 0 },
     whileInView: { opacity: 1 },
     transition: { type: "spring", stiffness: 90 },
   };
 
+  const textHoverProps = {
+    whileHover: { color: "#E9B24C" },
+  };
+
   return (
-      <header className="z-20">
-        <div className="flex flex-1 justify-center space-x-12 text-lg mt-8">
-          <motion.a {...motionProps} href="/">
-            <h1>HOME</h1>
-          </motion.a>
+    <header className="z-20">
+      <div className="flex flex-1 justify-center space-x-12 text-lg mt-8">
+        <motion.a {...motionProps} href="/">
+          <motion.h1 {...textHoverProps} className="text-white">HOME</motion.h1>
+        </motion.a>
 
-          <motion.a {...motionProps} href="/about">
-            <h1>ABOUT</h1>
-          </motion.a>
+        <motion.a {...motionProps} href="/about">
+          <motion.h1 {...textHoverProps} className="text-white">ABOUT</motion.h1>
+        </motion.a>
 
-          <motion.a {...motionProps} href="/skills">
-            <h1>SKILLS</h1>
-          </motion.a>
-          <motion.a {...motionProps} href="/contact">
-            <h1>CONTACT</h1>
-          </motion.a>
-        </div>
-      </header>
+        <motion.a {...motionProps} href="/skills">
+          <motion.h1 {...textHoverProps} className="text-white">SKILLS</motion.h1>
+        </motion.a>
+
+        <motion.a {...motionProps} href="/contact">
+          <motion.h1 {...textHoverProps} className="text-white">CONTACT</motion.h1>
+        </motion.a>
+      </div>
+    </header>
   );
 }
 
