@@ -12,22 +12,24 @@ function Header() {
   };
 
   return (
-      <div className="flex flex-1 justify-center space-x-12 text-lg">
-        <motion.a {...motionProps} href="/">
-          <h1>HOME</h1>
-        </motion.a>
+      <header className="z-20">
+        <div className="flex flex-1 justify-center space-x-12 text-lg mt-8">
+          <motion.a {...motionProps} href="/">
+            <h1>HOME</h1>
+          </motion.a>
 
-        <motion.a {...motionProps} href="/about">
-          <h1>ABOUT</h1>
-        </motion.a>
+          <motion.a {...motionProps} href="/about">
+            <h1>ABOUT</h1>
+          </motion.a>
 
-        <motion.a {...motionProps} href="/skills">
-          <h1>SKILLS</h1>
-        </motion.a>
-        <motion.a {...motionProps} href="/contact">
-          <h1>CONTACT</h1>
-        </motion.a>
-      </div>
+          <motion.a {...motionProps} href="/skills">
+            <h1>SKILLS</h1>
+          </motion.a>
+          <motion.a {...motionProps} href="/contact">
+            <h1>CONTACT</h1>
+          </motion.a>
+        </div>
+      </header>
   );
 }
 

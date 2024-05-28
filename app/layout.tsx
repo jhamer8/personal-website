@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cuprum } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
-
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export const metadata: Metadata = {
   title: "Personal Website",
@@ -19,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cuprum.className}>
-        <Header />
-        {children}
+        <AuroraBackground>
+          <Header />
+          {children}
+        </AuroraBackground>
       </body>
     </html>
   );
