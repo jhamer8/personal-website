@@ -1,9 +1,13 @@
 import Image from "next/image";
+import { FlipWords } from "@/components/ui/flip-words";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-white">Home</h1>
+    <div className="flex items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center text-8xl">
+        <h1 className="text-yellow-500">Welcome to my</h1>
+        <FlipWords words={["personal website", "digital portfolio", "creative outlet", "exploration hub"]} />
+      </div>
     </div>
   );
 }
