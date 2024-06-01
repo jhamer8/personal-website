@@ -14,7 +14,7 @@ export const AuroraBackground = ({
   ...props
 }: AuroraBackgroundProps) => {
   return (
-    <div className={`aurora-background ${className} z-10`} {...props}>
+    <div className={`aurora-background ${className}`} {...props}>
       <div
         className={cn(
           "relative flex flex-col h-[100vh] items-center justify-center bg-gray-800 dark:bg-zinc-900 text-slate-950 transition-bg",
@@ -37,7 +37,6 @@ export const AuroraBackground = ({
             after:dark:[background-image:var(--dark-gradient),var(--aurora)]
             after:[background-size:200%,_100%] 
             after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
-            pointer-events-none
             absolute -inset-[10px] opacity-50 will-change-transform`,
 
               showRadialGradient &&
