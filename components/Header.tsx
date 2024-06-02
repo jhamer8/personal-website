@@ -13,14 +13,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+
+
 function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="z-20">
       <div className="hidden sm:flex flex-1 justify-center space-x-12 text-lg mt-8">
-        <NavItem text="HOME" href="/" />
-        <NavItem text="ABOUT" href="/about" />
-        <NavItem text="SKILLS" href="/skills" />
-        <NavItem text="CONTACT" href="/contact" />
+        <NavItem text="HOME" href="/" className={`link ${pathname === '/' ? 'text-themeOrange' : 'text-white'}`} />
+        <NavItem text="ABOUT" href="/about" className={`link ${pathname === '/about' ? 'text-themeOrange' : 'text-white'}`} />
+        <NavItem text="SKILLS" href="/skills" className={`link ${pathname === '/skills' ? 'text-themeOrange' : 'text-white'}`} />
+        <NavItem text="CONTACT" href="/contact" className={`link ${pathname === '/contact' ? 'text-themeOrange' : 'text-white'}`} />
       </div>
       <div className="flex ml-8 justify-start mt-8 sm:hidden w-full">
         <Sheet>
@@ -28,18 +34,11 @@ function Header() {
             <Bars3Icon className="h-8 w-8 text-white" />
           </SheetTrigger>
           <SheetContent side={"top"} className="flex flex-col justify-start text-themePurple">
-            {/* <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader> */}
             <nav className="flex flex-col space-y-4">
-              <a href="/" className="text-lg font-medium hover:text-themeOrange">Home</a>
-              <a href="/about" className="text-lg font-medium hover:text-themeOrange">About</a>
-              <a href="/skills" className="text-lg font-medium hover:text-themeOrange">Skills</a>
-              <a href="/contact" className="text-lg font-medium hover:text-themeOrange">Contact</a>
+              <a href="/" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/' ? 'text-themeOrange' : ''}`}>Home</a>
+              <a href="/about" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/about' ? 'text-themeOrange' : ''}`}>About</a>
+              <a href="/skills" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/skills' ? 'text-themeOrange' : ''}`}>Skills</a>
+              <a href="/contact" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/contact' ? 'text-themeOrange' : ''}`}>Contact</a>
             </nav>
           </SheetContent>
         </Sheet>
@@ -49,3 +48,4 @@ function Header() {
 }
 
 export default Header;
+

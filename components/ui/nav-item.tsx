@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 const useNavItemAnimation = () => {
   return useAnimation();
 };
-export default function NavItem ({ text, href }: { text: string; href: string }) {
+export default function NavItem({ text, href, className }: { text: string; href: string; className?: string }) {
     const controls = useNavItemAnimation();
   
     const motionProps = {
@@ -25,9 +25,10 @@ export default function NavItem ({ text, href }: { text: string; href: string })
         href={href}
         onHoverStart={() => controls.start("visible")}
         onHoverEnd={() => controls.start("hidden")}
+        className={className}
       >
         <motion.div className="relative">
-          <motion.h1 {...textHoverProps} className="text-white">
+          <motion.h1 {...textHoverProps} className={` ${className}`}>
             {text}
           </motion.h1>
           <motion.div
