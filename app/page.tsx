@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Doppio_One } from "next/font/google";
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 
 const doppioOne = Doppio_One({
@@ -17,7 +17,7 @@ const suffix = [
   "Software Engineer",
   "Full Stack Developer",
   "Data Scientist",
-  "Mountain Biker"
+  "Mountain Biker",
 ];
 
 export default function Home() {
@@ -28,22 +28,34 @@ export default function Home() {
       >
         <h1 className="text-themeOrange mb-4 sm:mb-6 md:mb-8">Hi I'm Jaden!</h1>
         <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center">
-          <h1 className="text-white mb-2 sm:mb-0">Computer science student and</h1>
-          <FlipWords words={suffix} className="text-themePurple"/>
+          <h1 className="text-white mb-2 sm:mb-0">
+            Computer science student and
+          </h1>
+          <FlipWords words={suffix} className="text-themePurple" />
         </div>
         <Separator className="w-full h-0.5 bg-themeWhite my-4 sm:my-6 md:my-8" />
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 text-lg sm:text-xl">
-          <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center space-x-2">
-            <a href="https://www.linkedin.com/in/your-profile" className="flex items-center space-x-2">
-              <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-              <p className="text-themePurple">LinkedIn</p>
-            </a>
+        <div className="flex flex-row space-x-4 text-lg sm:text-xl">
+          <div className="flex-1">
+            <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20">
+              <a
+                href="https://www.linkedin.com/in/your-profile"
+                className="flex items-center space-x-2"
+              >
+                <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
+                <p className="text-themePurple">LinkedIn</p>
+              </a>
+            </div>
           </div>
-          <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center space-x-2 z-20">
-            <a href="https://github.com/your-profile" className="flex items-center space-x-2">
-              <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-              <p className="text-themePurple">GitHub</p>
-            </a>
+          <div className="flex-1">
+            <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20">
+              <a
+                href="https://github.com/your-profile"
+                className="flex items-center space-x-2"
+              >
+                <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
+                <p className="text-themePurple">GitHub</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
