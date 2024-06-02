@@ -36,7 +36,7 @@ const NavItem = ({ text, href }: { text: string; href: string }) => {
           {text}
         </motion.h1>
         <motion.div
-          className="absolute bottom-0 left-0 h-0.5 bg-yellow-500"
+          className="absolute bottom-0 left-0 h-0.5 bg-themeOrange"
           variants={underlineVariants}
           initial="hidden"
           animate={controls}

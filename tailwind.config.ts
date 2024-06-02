@@ -21,6 +21,13 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        themeWhite: '#F4F2EF',
+        themeOrange: '#F08F3E',
+        themeBlue: '#9394A9',
+        themePurple: '#7E6370',
+        themeBlack: '#282931',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

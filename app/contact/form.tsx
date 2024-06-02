@@ -20,7 +20,7 @@ export default function ContactForm() {
         Contact Me
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Feel free to reach out to me using the form below.
+        Feel free to reach out to me using this form here.
       </p>
 
       <form className="my-8 z-50" onSubmit={handleSubmit}>
