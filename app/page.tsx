@@ -35,28 +35,20 @@ export default function Home() {
         </div>
         <Separator className="w-full h-0.5 bg-themeWhite my-4 sm:my-6 md:my-8" />
         <div className="flex flex-row space-x-4 text-lg sm:text-xl">
-          <div className="flex-1">
-            <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20">
-              <a
-                href="https://www.linkedin.com/in/your-profile"
-                className="flex items-center space-x-2"
-              >
-                <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-                <p className="text-themePurple">LinkedIn</p>
-              </a>
-            </div>
-          </div>
-          <div className="flex-1">
-            <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20">
-              <a
-                href="https://github.com/your-profile"
-                className="flex items-center space-x-2"
-              >
-                <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-                <p className="text-themePurple">GitHub</p>
-              </a>
-            </div>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/your-profile"
+            className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20"
+          >
+            <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
+            <p className="text-themePurple">LinkedIn</p>
+          </a>
+          <a
+            href="https://github.com/your-profile"
+            className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20"
+          >
+            <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
+            <p className="text-themePurple">GitHub</p>
+          </a>
         </div>
       </div>
     </div>
