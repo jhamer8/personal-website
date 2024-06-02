@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={doppioOne.className}>
+      <body className={`${doppioOne.className} overflow-hidden w-[100vw] h-[100vh]`}>
         <AuroraBackground>
           <Header />
           {children}
