@@ -22,26 +22,26 @@ const suffix = [
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen z-20">
+    <div className="flex items-center justify-center h-screen z-20 p-4 md:p-8 min-w-[300px]">
       <div
-        className={`flex flex-col items-center justify-center text-6xl md:text-8xl ${doppioOne.className}`}
+        className={`flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl ${doppioOne.className}`}
       >
-        <h1 className="text-themeOrange mb-8">Hi I'm Jaden!</h1>
-        <div className="flex items-center justify-center text-xl">
-          <h1 className="text-white">Computer science student and</h1>
+        <h1 className="text-themeOrange mb-4 sm:mb-6 md:mb-8">Hi I'm Jaden!</h1>
+        <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center">
+          <h1 className="text-white mb-2 sm:mb-0">Computer science student and</h1>
           <FlipWords words={suffix} className="text-themePurple"/>
         </div>
-        <Separator className="w-full h-0.5 bg-themeWhite my-8" />
-        <div className="flex space-x-4 text-xl">
-          <div className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-2">
+        <Separator className="w-full h-0.5 bg-themeWhite my-4 sm:my-6 md:my-8" />
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 text-lg sm:text-xl">
+          <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center space-x-2">
             <a href="https://www.linkedin.com/in/your-profile" className="flex items-center space-x-2">
-              <IconBrandLinkedin className="h-8 w-8 text-themePurple" />
+              <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
               <p className="text-themePurple">LinkedIn</p>
             </a>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-2 z-20">
+          <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center space-x-2 z-20">
             <a href="https://github.com/your-profile" className="flex items-center space-x-2">
-              <IconBrandGithub className="h-8 w-8 text-themePurple" />
+              <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
               <p className="text-themePurple">GitHub</p>
             </a>
           </div>
