@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Short_Stack } from "next/font/google";
+import { Doppio_One } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Jaden's Personal Website",
 };
 
-const shortStack = Short_Stack({ weight: "400", subsets: ["latin"] });
+const doppioOne = Doppio_One({ weight: "400", subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={shortStack.className}>
+      <body className={doppioOne.className}>
         <AuroraBackground>
           <Header />
           {children}

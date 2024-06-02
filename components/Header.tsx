@@ -1,60 +1,34 @@
 "use client";
-
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const useNavItemAnimation = () => {
-  return useAnimation();
-};
-
-const NavItem = ({ text, href }: { text: string; href: string }) => {
-  const controls = useNavItemAnimation();
-
-  const motionProps = {
-    whileHover: { scale: 1.15 },
-    transition: { type: "spring", stiffness: 90 },
-  };
-
-  const textHoverProps = {
-    whileHover: { color: "#E9B24C" },
-  };
-
-  const underlineVariants = {
-    hidden: { width: 0 },
-    visible: { width: "100%" },
-  };
-
-  return (
-    <motion.a
-      {...motionProps}
-      href={href}
-      onHoverStart={() => controls.start("visible")}
-      onHoverEnd={() => controls.start("hidden")}
-    >
-      <motion.div className="relative">
-        <motion.h1 {...textHoverProps} className="text-white">
-          {text}
-        </motion.h1>
-        <motion.div
-          className="absolute bottom-0 left-0 h-0.5 bg-themeOrange"
-          variants={underlineVariants}
-          initial="hidden"
-          animate={controls}
-          transition={{ duration: 0.3 }}
-        />
-      </motion.div>
-    </motion.a>
-  );
-};
+import NavItem from "./ui/nav-item";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 function Header() {
   return (
     <header className="z-20">
-      <div className="flex flex-1 justify-center space-x-12 text-lg mt-8">
+      <div className="hidden sm:flex flex-1 justify-center space-x-12 text-lg mt-8">
         <NavItem text="HOME" href="/" />
         <NavItem text="ABOUT" href="/about" />
         <NavItem text="SKILLS" href="/skills" />
         <NavItem text="CONTACT" href="/contact" />
+      </div>
+      <div className="flex ml-8 justify-start mt-8 sm:hidden w-full">
+        <Popover>
+          <PopoverTrigger>
+            <Bars3Icon className="h-8 w-8 text-white" />
+          </PopoverTrigger>
+          <PopoverContent className="flex flex-col justify-start text-themeOrange ">
+            <a className="" href="/">HOME</a>
+            <a className="" href="/about">ABOUT</a>
+            <a className="" href="/skills">SKILLS</a>
+            <a className="" href="/contact">CONTACT</a>
+          </PopoverContent>
+        </Popover>
       </div>
     </header>
   );
