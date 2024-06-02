@@ -30,9 +30,9 @@ export default function Home() {
           Hi I'm Jaden!
         </h1>
         <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center">
-          <h1 className="text-white sm:mb-0">Computer science student</h1>
+          <h1 className="text-white sm:mb-0">Computer science student at</h1>
           <div className="flex flex-row">
-            <h1 className="text-white">and</h1>
+            <h1 className="text-white">Georgia Tech and</h1>
             <FlipWords words={suffix} className="text-themePurple" />
           </div>
         </div>
