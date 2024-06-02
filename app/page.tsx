@@ -26,12 +26,15 @@ export default function Home() {
       <div
         className={`flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl ${doppioOne.className}`}
       >
-        <h1 className="text-themeOrange mb-4 sm:mb-10 md:mb-14">Hi I'm Jaden!</h1>
+        <h1 className="text-themeOrange mb-4 sm:mb-10 md:mb-14">
+          Hi I'm Jaden!
+        </h1>
         <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center">
-          <h1 className="text-white sm:mb-0">
-            Computer science student and
-          </h1>
-          <FlipWords words={suffix} className="text-themePurple" />
+          <h1 className="text-white sm:mb-0">Computer science student</h1>
+          <div className="flex flex-row">
+            <h1 className="text-white">and</h1>
+            <FlipWords words={suffix} className="text-themePurple" />
+          </div>
         </div>
         <div className="flex flex-col text-lg sm:text-xl">
           <Separator className="w-full h-0.5 bg-themeWhite my-4 sm:my-6 md:my-8" />
