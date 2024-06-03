@@ -19,7 +19,7 @@ export default function MapComponent() {
           zoom: 16,
         }}
         style={{ width: '100%', height: '100%' }}
-        mapStyle="mapbox://styles/mapbox/dark-v10"
+        mapStyle="mapbox://styles/mapbox/navigation-night-v1"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
         <Marker longitude={-84.39607426503417} latitude={33.7773732945584} color="red" />
