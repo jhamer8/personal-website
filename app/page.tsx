@@ -29,7 +29,7 @@ export default function Home() {
         <h1 className="text-themeOrange mb-4 sm:mb-10 md:mb-14">
           Hi I'm Jaden!
         </h1>
-        <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center">
+        <div className="flex flex-col items-center justify-center text-lg sm:text-xl text-center lg:text-2xl">
           <h1 className="text-white sm:mb-0">Computer science student at</h1>
           <div className="flex flex-row">
             <h1 className="text-white">Georgia Tech and</h1>
