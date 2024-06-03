@@ -38,20 +38,20 @@ export default function Home() {
         </div>
         <div className="flex flex-col text-lg sm:text-xl">
           <Separator className="w-full h-0.5 bg-themeWhite my-4 sm:my-6 md:my-8" />
-          <div className="flex flex-row space-x-5">
+          <div className="flex flex-row space-x-5 text-themeBlack">
             <a
               href="https://www.linkedin.com/in/jaden-hamer-b96226219"
-              className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20"
+              className="bg-white p-3 sm:p-2 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20 transition transform hover:scale-105 hover:text-themeOrange"
             >
-              <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-              <p className="text-themePurple">LinkedIn</p>
+              <IconBrandLinkedin className="h-6 w-6 sm:h-8 sm:w-8" />
+              <p className="">LinkedIn</p>
             </a>
             <a
               href="https://github.com/jhamer8"
-              className="bg-white p-2 sm:p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20"
+              className="bg-white p-3 sm:p-2 rounded-lg shadow-md flex items-center justify-center space-x-2 z-20 transition transform hover:scale-105 hover:text-themeOrange"
             >
-              <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-themePurple" />
-              <p className="text-themePurple">GitHub</p>
+              <IconBrandGithub className="h-6 w-6 sm:h-8 sm:w-8 text-" />
+              <p className="">GitHub</p>
             </a>
           </div>
         </div>

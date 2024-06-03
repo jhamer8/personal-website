@@ -15,12 +15,12 @@ export default function ContactForm() {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black z-50">
+    <div className="max-w-md w-full rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black z-50">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Contact Me
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Feel free to reach out to me using this form here.
+        Feel free to reach out to me here.
       </p>
 
       <form className="my-8 z-50" onSubmit={handleSubmit}>
@@ -57,10 +57,7 @@ export default function ContactForm() {
           type="submit"
         >
           Send Message &rarr;
-          <BottomGradient />
         </button>
-
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
         {/* <div className="flex flex-col space-y-4">
           <button
