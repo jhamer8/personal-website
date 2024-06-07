@@ -28,7 +28,7 @@ function Header() {
         <NavItem text="SKILLS" href="/skills" className={`link ${pathname === '/skills' ? 'text-themeOrange' : 'text-white'}`} />
         <NavItem text="CONTACT" href="/contact" className={`link ${pathname === '/contact' ? 'text-themeOrange' : 'text-white'}`} />
       </div>
-      <div className="flex ml-8 justify-start mt-8 sm:hidden w-full">
+      <div className="flex ml-6 justify-start mt-8 sm:hidden w-full">
         <Sheet>
           <SheetTrigger>
             <Bars3Icon className="h-8 w-8 text-white" />

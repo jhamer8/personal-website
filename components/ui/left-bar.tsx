@@ -1,12 +1,15 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpenIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
 import { BookOpenIcon as BookOpenIconSolid, BriefcaseIcon as BriefcaseIconSolid } from "@heroicons/react/24/solid";
 
-function LeftBar() {
-  const [activeIcon, setActiveIcon] = useState<string | null>('book');
+interface LeftBarProps {
+  activeIcon: string | null;
+  setActiveIcon: (icon: string) => void;
+}
 
+function LeftBar({ activeIcon, setActiveIcon }: LeftBarProps) {
   return (
     <div className="flex flex-col justify-center ml-6 space-y-5 z-20">
       <motion.button
