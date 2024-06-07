@@ -15,7 +15,7 @@ export default function ContactForm() {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black z-50">
+    <div className="max-w-md w-full md:max-w-2xl lg:max-w-4xl xl:max-w-6xl rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black z-50">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Contact Me
       </h2>

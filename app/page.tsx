@@ -12,7 +12,7 @@ const doppioOne = Doppio_One({
 });
 
 const suffix = [
-  "Something Here",
+  // "Something Here",
   "AI Enthusiast",
   "Software Engineer",
   "Full Stack Developer",
@@ -22,7 +22,7 @@ const suffix = [
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen z-20 p-4 md:p-8 min-w-[300px]">
+    <div className="flex items-center justify-center h-screen z-20 p-4 md:p-8 min-w-[300px] max-w-7xl mx-auto">
       <div
         className={`flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl ${doppioOne.className}`}
       >

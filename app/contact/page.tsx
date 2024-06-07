@@ -11,7 +11,7 @@ import MapComponent from "@/components/Map";
 
 function Contact() {
   return (
-    <div className="flex flex-1 justify-center h-screen w-full z-50 overflow-auto dark:bg-gray-900 p-6 ">
+    <div className="flex flex-1 justify-center w-full z-50 overflow-auto dark:bg-gray-900 p-6 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-around mt-12 space-y-8 sm:space-y-0 w-full">
         <div className="flex flex-col text-themeOrange space-y-8 sm:flex-1 items-center max-w-lg">
           <h1 className="text-4xl font-bold">Let's Connect!</h1>
@@ -51,4 +51,3 @@ function Contact() {
 }
 
 export default Contact;
-
