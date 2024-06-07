@@ -11,7 +11,7 @@ interface LeftBarProps {
 
 function LeftBar({ activeIcon, setActiveIcon }: LeftBarProps) {
   return (
-    <div className="flex flex-col justify-center ml-6 space-y-5 z-20">
+    <div className="flex flex-col justify-center mx-6 space-y-5 z-20">
       <motion.button
         onClick={() => setActiveIcon('book')}
         whileHover={{ scale: 1.1, color: "black" }}

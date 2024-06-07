@@ -21,4 +21,6 @@
 .transition-icon {
   transition: all 2s ease-in-out;
 }
-  
+.blur-background {
+  backdrop-filter: blur(60px) brightness(1.6);
+}

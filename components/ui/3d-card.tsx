@@ -51,7 +51,7 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-20 flex items-center justify-center",
+          " flex items-center justify-center",
           containerClassName
         )}
         style={{
@@ -160,7 +160,7 @@ export default function PortfolioCard (name: string, number: string, link: strin
   return (
     <CardContainer
       containerClassName="portfolio-container"
-      className="bg-themeWhite rounded-lg hover:shadow-xl transition-shadow duration-300"
+      className="bg-themeWhite rounded-lg hover:shadow-xl transition-shadow duration-300 z-20"
     >
       <CardBody className="flex flex-row justify-between p-5">
         <div>
@@ -172,9 +172,9 @@ export default function PortfolioCard (name: string, number: string, link: strin
           </CardItem>
         </div>
         <div className="flex items-center justify-center">
-          <button className="ml-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200">
-            <LinkIcon className="h-6 w-6 text-themeBlack" />
-          </button>
+          <a className="ml-4 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200" href={link} target="_blank">
+            <LinkIcon className="h-6 w-6 text-themeBlack"  />
+          </a>
         </div>
       </CardBody>
     </CardContainer>
