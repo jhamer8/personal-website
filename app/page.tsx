@@ -22,7 +22,7 @@ const suffix = [
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen z-20 p-4 md:p-8 min-w-[300px]">
+    <div className="flex flex-1 justify-center w-full z-20 overflow-auto dark:bg-gray-900 p-6 min-h-screen min-w-[300px]">
       <div
         className={`flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl ${doppioOne.className}`}
       >

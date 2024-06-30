@@ -18,10 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${doppioOne.className} overflow-hidden w-[100vw] h-[100vh]`}>
-        <AuroraBackground>
-          <Header />
-          {children}
+      <body
+        className={`${doppioOne.className} overflow-hidden w-[100vw] h-[100vh] flex flex-1 flex-col`}
+      >
+        <AuroraBackground className="bg">
+          <div className="flex flex-1 flex-col h-full">
+            <div className="flex flex-1 mb-16">
+              <Header/>
+            </div>
+            <div className="overflow-auto">{children}</div>
+          </div>
         </AuroraBackground>
       </body>
     </html>

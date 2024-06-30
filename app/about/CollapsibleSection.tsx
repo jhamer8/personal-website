@@ -16,14 +16,13 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
   title,
   children,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
-    setIsOpen(mediaQuery.matches);
-
+    setIsOpen(!mediaQuery.matches); 
     const handleResize = (e: MediaQueryListEvent) => {
-      setIsOpen(e.matches);
+      setIsOpen(!e.matches);
     };
 
     mediaQuery.addEventListener("change", handleResize);

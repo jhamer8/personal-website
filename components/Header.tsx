@@ -16,12 +16,15 @@ import {
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
+interface HeaderProps {
+  className?: string;
+}
 
-function Header() {
+function Header({ className = "" }: HeaderProps) {
   const pathname = usePathname();
 
   return (
-    <header className="z-20">
+    <header className={`z-50 fixed top-0 w-full ${className}`}>
       <div className="hidden sm:flex flex-1 justify-center space-x-12 text-lg mt-8">
         <NavItem text="HOME" href="/" className={`link ${pathname === '/' ? 'text-themeOrange' : 'text-white'}`} />
         <NavItem text="ABOUT" href="/about" className={`link ${pathname === '/about' ? 'text-themeOrange' : 'text-white'}`} />
@@ -48,4 +51,3 @@ function Header() {
 }
 
 export default Header;
-

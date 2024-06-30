@@ -1,17 +1,14 @@
 import React from "react";
 import ContactForm from "./form";
-import Image from "next/image";
-import pfp from "../../photos/pfp2.png";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandTwitter,
 } from "@tabler/icons-react";
 import MapComponent from "@/components/Map";
 
 function Contact() {
   return (
-    <div className="flex flex-1 justify-center w-full z-50 overflow-auto dark:bg-gray-900 p-6 min-h-screen">
+    <div className="flex flex-1 justify-center w-full z-20 overflow-auto dark:bg-gray-900 p-6 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-around mt-12 space-y-8 sm:space-y-0 w-full">
         <div className="flex flex-col text-themeOrange space-y-8 sm:flex-1 items-center max-w-lg">
           <h1 className="text-4xl font-bold">Let's Connect!</h1>
@@ -19,7 +16,7 @@ function Contact() {
           <MapComponent />
           <div className="mt-8 w-full ">
             <div className="flex flex-row justify-between w-full">
-              <h2 className="text-2xl font-bold content-center">
+              <h2 className="text-2xl font-bold content-center mr-4">
                 Connect Here:{" "}
               </h2>
               <div className="flex flex-row space-x-5 text-themeBlack">
@@ -42,7 +39,7 @@ function Contact() {
           </div>
         </div>
         <div className="bg-gradient-to-b from-transparent via-neutral-300 dark:via-yellow-500 to-transparent my-8 w-0.5 h-full mx-4" />
-        <div className="">
+        <div className="pt-12">
           <ContactForm />
         </div>
       </div>

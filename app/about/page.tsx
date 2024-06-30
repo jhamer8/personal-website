@@ -8,13 +8,13 @@ function About() {
   const [activeIcon, setActiveIcon] = useState<string | null>("book");
 
   return (
-    <div className="flex flex-1 overflow-auto">
+    <div className="flex flex-1 justify-center w-full z-20 overflow-auto dark:bg-gray-900 p-6 min-h-screen">
       <LeftBar activeIcon={activeIcon} setActiveIcon={setActiveIcon} />
       <div className="flex flex-1 flex-col items-center z-20 mt-6 text-white ">
         <h1 className="text-4xl font-semibold text-themeWhite mb-6">
           Education
         </h1>
-        <div className="rounded-lg border border-white w-full max-w-4xl blur-background mr-6">
+        <div className="rounded-lg border border-white w-full max-w-4xl blur-background mr-8">
           <div className="flex flex-col p-6">
             <h2 className="text-2xl font-semibold space-y-4">
               Georgia Institute of Technology
