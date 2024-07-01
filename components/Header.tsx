@@ -38,10 +38,10 @@ function Header({ className = "" }: HeaderProps) {
           </SheetTrigger>
           <SheetContent side={"top"} className="flex flex-col justify-start text-themePurple">
             <nav className="flex flex-col space-y-4">
-              <a href="/" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/' ? 'text-themeOrange' : ''}`}>Home</a>
-              <a href="/about" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/about' ? 'text-themeOrange' : ''}`}>About</a>
-              <a href="/skills" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/skills' ? 'text-themeOrange' : ''}`}>Skills</a>
-              <a href="/contact" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/contact' ? 'text-themeOrange' : ''}`}>Contact</a>
+              <Link href="/" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/' ? 'text-themeOrange' : ''}`}>Home</Link>
+              <Link href="/about" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/about' ? 'text-themeOrange' : ''}`}>About</Link>
+              <Link href="/skills" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/skills' ? 'text-themeOrange' : ''}`}>Skills</Link>
+              <Link href="/contact" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/contact' ? 'text-themeOrange' : ''}`}>Contact</Link>
             </nav>
           </SheetContent>
         </Sheet>
