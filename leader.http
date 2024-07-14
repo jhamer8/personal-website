@@ -1,0 +1,6 @@
+POST https://iocx4uyt.api.lootlocker.io/game/leaderboards/23209/submit
+
+{
+    member_id: "6351418",
+    score: 6969
+}

@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import Image from "next/image";
 import { LinkIcon } from "@heroicons/react/24/outline";
 
 import React, {
@@ -32,20 +31,22 @@ export const CardContainer = ({
     if (!containerRef.current) return;
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const x = (e.clientX - left - width / 2) / 10; // Increased rotation effect
+    const y = (e.clientY - top - height / 2) / 10; // Increased rotation effect
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg) scale(1.05)`; // Added scaling
   };
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseEntered(true);
     if (!containerRef.current) return;
+    containerRef.current.style.transition = "transform 0.2s ease-out";
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     setIsMouseEntered(false);
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`; // Reset scaling
+    containerRef.current.style.transition = "transform 0.5s ease-in";
   };
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
@@ -130,9 +131,11 @@ export const CardItem = ({
   const handleAnimations = () => {
     if (!ref.current) return;
     if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(1.1)`; // Added scaling
+      ref.current.style.transition = "transform 0.2s ease-out";
     } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1)`; // Reset scaling
+      ref.current.style.transition = "transform 0.5s ease-in";
     }
   };
 
@@ -147,7 +150,6 @@ export const CardItem = ({
   );
 };
 
-// Create a hook to use the context
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {
@@ -155,28 +157,33 @@ export const useMouseEnter = () => {
   }
   return context;
 };
-
-export default function PortfolioCard (name: string, number: string, link: string) {
+export default function PortfolioCard({
+  name,
+  number,
+  link,
+}: {
+  name: string;
+  number: string;
+  link: string;
+}) {
   return (
-    <CardContainer
-      containerClassName="portfolio-container"
-      className="bg-themeWhite rounded-lg hover:shadow-xl transition-shadow duration-300 z-20"
-    >
-      <CardBody className="flex flex-row justify-between p-5">
+    <div className="flex w-full bg-themeWhite rounded-lg hover:shadow-xl transition-transform duration-500 z-20 hover:scale-105">
+      <div className="flex flex-row justify-between p-5 w-full">
         <div>
-          <CardItem className="portfolio-item" translateZ={30}>
-            <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
-          </CardItem>
-          <CardItem className="portfolio-item" translateZ={20}>
-            <p className="text-lg text-gray-600">{number}</p>
-          </CardItem>
+          <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
+          <p className="text-lg text-gray-600">{number}</p>
         </div>
-        <div className="flex items-center justify-center">
-          <a className="ml-4 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200" href={link} target="_blank">
-            <LinkIcon className="h-6 w-6 text-themeBlack"  />
+        <div className="flex items-center mt-4 sm:mt-0">
+          <a
+            className="ml-4 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkIcon className="h-6 w-6 text-themeBlack" />
           </a>
         </div>
-      </CardBody>
-    </CardContainer>
+      </div>
+    </div>
   );
-};
+}

@@ -22,59 +22,59 @@ function About() {
             <p className="text-lg text-slate-300">
               Bachelor of Science, Computer Science
             </p>
-            <CollapsibleSection title="Fall 2022">
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-            </CollapsibleSection>
+              <CollapsibleSection className="flex w-full" title="Fall 2022">
+                  <PortfolioCard
+                    name="Algorithms and Math"
+                    number="CS 3510"
+                    link="https://book.com"
+                  />
+                  <PortfolioCard
+                    name="Bit Manipulation"
+                    number="CS 2110"
+                    link="https://book.com"
+                  />
+                  <PortfolioCard
+                    name="Algorithms and Math"
+                    number="CS 3510"
+                    link="https://book.com"
+                  />
+                  <PortfolioCard
+                    name="Algorithms and Math"
+                    number="CS 3510"
+                    link="https://book.com"
+                  />
+                  <PortfolioCard
+                    name="Algorithms and Math"
+                    number="CS 3510"
+                    link="https://book.com"
+                  />
+              </CollapsibleSection>
             <CollapsibleSection title="Fall 2023">
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
-              {PortfolioCard(
-                "Algorithms and Math",
-                "CS 3510",
-                "https://book.com"
-              )}
+                <PortfolioCard
+                  name="Algorithms and Math"
+                  number="CS 3510"
+                  link="https://book.com"
+                />
+                <PortfolioCard
+                  name="Algorithms and Math"
+                  number="CS 3510"
+                  link="https://book.com"
+                />
+                <PortfolioCard
+                  name="Algorithms and Math"
+                  number="CS 3510"
+                  link="https://book.com"
+                />
+                <PortfolioCard
+                  name="Algorithms and Math"
+                  number="CS 3510"
+                  link="https://book.com"
+                />
+                <PortfolioCard
+                  name="Algorithms and Math"
+                  number="CS 3510"
+                  link="https://book.com"
+                />
             </CollapsibleSection>
           </div>
         </div>
