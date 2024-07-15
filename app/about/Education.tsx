@@ -8,8 +8,8 @@ const Education = () => {
       <h1 className="text-4xl font-semibold text-themeWhite mb-6">
         Education
       </h1>
-      <div className="rounded-lg border border-white w-full max-w-4xl blur-background mr-8">
-        <div className="flex flex-col p-6">
+      <div className="flex rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8">
+        <div className="flex flex-col p-6 w-full">
           <h2 className="text-2xl font-semibold space-y-4">
             Georgia Institute of Technology
           </h2>

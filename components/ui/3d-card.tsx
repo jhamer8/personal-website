@@ -175,7 +175,7 @@ export default function PortfolioCard({
         </div>
         <div className="flex items-center mt-4 sm:mt-0">
           <a
-            className="ml-4 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200"
+            className="ml-4 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200 hidden sm:block" 
             href={link}
             target="_blank"
             rel="noopener noreferrer"

@@ -2,7 +2,6 @@
 import React from "react";
 import NavItem from "./ui/nav-item";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { Button } from "@/components/ui/button";
 
 import {
   Sheet,
@@ -11,6 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
 import { usePathname } from 'next/navigation'
@@ -38,10 +38,18 @@ function Header({ className = "" }: HeaderProps) {
           </SheetTrigger>
           <SheetContent side={"top"} className="flex flex-col justify-start text-themePurple">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/' ? 'text-themeOrange' : ''}`}>Home</Link>
-              <Link href="/about" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/about' ? 'text-themeOrange' : ''}`}>About</Link>
-              <Link href="/skills" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/skills' ? 'text-themeOrange' : ''}`}>Skills</Link>
-              <Link href="/contact" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/contact' ? 'text-themeOrange' : ''}`}>Contact</Link>
+              <SheetClose asChild>
+                <Link href="/" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/' ? 'text-themeOrange' : ''}`}>Home</Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link href="/about" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/about' ? 'text-themeOrange' : ''}`}>About</Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link href="/skills" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/skills' ? 'text-themeOrange' : ''}`}>Skills</Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link href="/contact" className={`text-lg font-medium hover:text-themeOrange ${pathname === '/contact' ? 'text-themeOrange' : ''}`}>Contact</Link>
+              </SheetClose>
             </nav>
           </SheetContent>
         </Sheet>
