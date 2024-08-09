@@ -39,7 +39,7 @@ function Contact() {
           </div>
         </div>
         <div className="bg-gradient-to-b from-transparent via-neutral-300 dark:via-yellow-500 to-transparent my-8 w-0.5 h-full mx-4" />
-        <div className="pt-12">
+        <div className="pt-12 z-50">
           <ContactForm />
         </div>
       </div>
