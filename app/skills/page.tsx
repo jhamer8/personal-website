@@ -85,7 +85,7 @@ const PassionsSection = () => (
 );
 
 const LearningFocusSection = () => (
-  <div className="mt-12 bg-gradient-to-r from-themeOrange/10 to-themeOrange/20 rounded-lg p-6 shadow-lg">
+  <div className="mt-12 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg p-6 shadow-lg">
     <h3 className="text-2xl font-semibold text-themeOrange mb-4 flex items-center">
       <IconBrain className="mr-2" /> Current Learning Focus
     </h3>
