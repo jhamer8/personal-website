@@ -20,7 +20,7 @@ const Education = () => {
             </li>
           </ul>
           <hr className="my-4 border-slate-300" />
-          <CollapsibleSection title="Fall 2024 (Upcoming)">
+          <CollapsibleSection title="Fall 2024 (In-Progress)">
             <PortfolioCard
               name="Computer Systems and Networks"
               number="CS 2200"
