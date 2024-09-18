@@ -77,7 +77,7 @@ const PassionsSection = () => (
   <>
     <h4 className="text-white text-2xl font-semibold mb-4">Passions</h4>
     <div className="grid grid-cols-3 gap-4 auto-rows-fr">
-      {['Mountain Biking', 'BJJ', 'Hiking', 'Basketball', 'Cooking'].map((passion, index) => (
+      {['Cooking', 'BJJ', 'Hiking', 'Basketball', 'Mountain Biking'].map((passion, index) => (
         <PassionCard key={index} passion={passion} className={index >= 3 ? 'col-span-3 sm:col-span-1' : ''} />
       ))}
     </div>
