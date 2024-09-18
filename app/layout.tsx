@@ -5,8 +5,11 @@ import Header from "../components/Header";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export const metadata: Metadata = {
-  title: "Personal Website",
+  title: "Jaden's Digital Portfolio",
   description: "Jaden's Personal Website",
+  icons: {
+    icon: '/favicon.png'
+  }
 };
 
 const doppioOne = Doppio_One({ weight: "400", subsets: ["latin"] });
