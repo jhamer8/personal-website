@@ -12,10 +12,11 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setIsSubmitting(true);
     setIsSuccess(false);
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const data = {
       from: formData.get("email") as string,
       subject: formData.get("subject") as string,
@@ -51,7 +52,7 @@ export default function ContactForm() {
 
       console.log("Email sent successfully:", result);
       setIsSuccess(true);
-      e.currentTarget.reset();
+      form.reset();
     } catch (error) {
       console.error("Error sending email:", error);
       alert('Failed to send message. Please try again later.');
