@@ -25,7 +25,7 @@ export default function ContactForm() {
     };
 
     try {
-      console.log(data);
+      console.log('Attempting to send email with data:', data);
       const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
@@ -34,16 +34,27 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
 
+      console.log('Response status:', response.status);
+      const responseText = await response.text();
+      console.log('Response body:', responseText);
+
       if (!response.ok) {
-        throw new Error('Failed to send email');
+        throw new Error(`Failed to send email: ${response.status} ${responseText}`);
       }
 
-      const result = await response.json();
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch (e) {
+        console.warn('Response was not JSON:', responseText);
+      }
+
       console.log("Email sent successfully:", result);
       setIsSuccess(true);
-      e.currentTarget.reset(); 
+      e.currentTarget.reset();
     } catch (error) {
       console.error("Error sending email:", error);
+      alert('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
