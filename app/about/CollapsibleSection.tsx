@@ -38,14 +38,12 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
       <div className={`flex flex-1 justify-between items-center mb-6 w-full ${className}`}>
         <h1 className="flex-1">{title}</h1>
         <CollapsibleTrigger className="ml-4" onClick={toggleCollapsible}>
-          {isOpen ? <ChevronUpIcon className="w-6 h-6" /> : <ChevronDownIcon className="w-6 h-6" />}
+          <ChevronDownIcon className={`w-6 h-6 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
         </CollapsibleTrigger>
       </div>
-      <div className={`w-full ${isOpen ? 'block' : 'hidden'}`}>
-        <CollapsibleContent className="w-full mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{children}</div>
-        </CollapsibleContent>
-      </div>
+      <CollapsibleContent className="w-full mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{children}</div>
+      </CollapsibleContent>
     </Collapsible>
   );
 };

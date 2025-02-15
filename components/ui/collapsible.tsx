@@ -14,7 +14,12 @@ const CollapsibleContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<CollapsiblePrimitive.CollapsibleContent
 		ref={ref}
-		className={cn('overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up', className)}
+		className={cn(
+			'overflow-hidden transition-all',
+			'data-[state=open]:animate-collapsible-down',
+			'data-[state=closed]:animate-collapsible-up',
+			className
+		)}
 		{...props}
 	/>
 ));
