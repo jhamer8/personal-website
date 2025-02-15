@@ -4,8 +4,9 @@ import { useSearchParams, useRouter } from "next/navigation";
 import LeftBar from "@/components/ui/left-bar";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
+import { Suspense } from "react";
 
-function About() {
+function AboutContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const activeIcon = searchParams.get("section") || "book";
@@ -25,6 +26,14 @@ function About() {
         )}
       </div>
     </div>
+  );
+}
+
+function About() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }
 
