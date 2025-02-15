@@ -1,16 +1,38 @@
 import React from "react";
 import PortfolioCard from "@/components/ui/3d-card";
 import CollapsibleSection from "./CollapsibleSection";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
-    <>
-      <h1 className="text-4xl font-semibold text-themeWhite mb-6">Education</h1>
-      <div className="flex rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.h1 
+        className="text-4xl font-semibold text-themeWhite mb-6"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Education
+      </motion.h1>
+      <motion.div 
+        className="flex rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <div className="flex flex-col p-6 w-full">
-          <h2 className="text-2xl font-semibold mb-2">
+          <motion.h2 
+            className="text-2xl font-semibold mb-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             Georgia Institute of Technology
-          </h2>
+          </motion.h2>
           <p className="text-lg text-slate-100">
             Bachelor of Science, Computer Science
           </p>
@@ -158,8 +180,8 @@ const Education = () => {
             />
           </CollapsibleSection>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
 };
 

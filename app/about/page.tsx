@@ -1,11 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import LeftBar from "@/components/ui/left-bar";
 import Education from "./Education";
-import WorkExperience from "./WorkExperience"; // Import the new component
+import WorkExperience from "./WorkExperience";
 
 function About() {
-  const [activeIcon, setActiveIcon] = useState<string | null>("book");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const activeIcon = searchParams.get("section") || "book";
+
+  const setActiveIcon = (icon: string) => {
+    router.push(`/about?section=${icon}`);
+  };
 
   return (
     <div className="flex flex-1 justify-center w-full z-20 overflow-auto dark:bg-gray-900 p-6 min-h-screen">
@@ -14,7 +21,7 @@ function About() {
         {activeIcon === "book" ? (
           <Education />
         ) : (
-          <WorkExperience /> // Use the new component
+          <WorkExperience /> 
         )}
       </div>
     </div>
