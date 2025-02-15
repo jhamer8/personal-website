@@ -167,7 +167,7 @@ export default function PortfolioCard({
   link: string;
 }) {
   return (
-    <div className="flex w-full bg-themeWhite rounded-lg hover:shadow-xl transition-transform duration-500 z-20 hover:scale-105">
+    <div className="flex w-full bg-themeWhite hover:bg-gray-300 rounded-lg transition-all duration-300 z-20">
       <div className="flex flex-row justify-between p-5 w-full">
         <div>
           <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
