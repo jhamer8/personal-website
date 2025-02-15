@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const { from, subject, firstName, lastName, message } = await request.json();
-    //testing redeploy
+    //testing redeploy and again
     if (typeof from !== 'string' || !from.trim()) {
       console.error('Invalid "from" field:', from);
       return Response.json({ error: 'Invalid "from" field' }, { status: 422 });
