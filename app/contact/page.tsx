@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import ContactForm from "./form";
 import {
   IconBrandGithub,
@@ -21,16 +23,35 @@ function Contact() {
         </div> */}
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {/* Left Column - Info */}
-          <div className="space-y-4">
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             {/* Map */}
-            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <motion.div 
+              className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
               <MapComponent />
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex flex-col space-y-2">
+            <motion.div 
+              className="flex flex-col space-y-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
                 Connect on Social Media
               </h2>
@@ -50,17 +71,27 @@ function Contact() {
                   <span className="ml-3 text-gray-800 dark:text-white group-hover:text-orange-500 transition-colors">GitHub</span>
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Contact Form */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-3xl transform -rotate-3" />
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-3xl"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: -3 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            />
             <div className="relative">
               <ContactForm />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
