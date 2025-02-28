@@ -33,14 +33,14 @@ const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }
       <h4 className="text-lg font-semibold text-themeWhite transition-colors duration-300">
         {company}
       </h4>
-      <div className="flex items-center space-x-4 text-sm text-gray-400">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 text-sm text-gray-400">
         <div className="flex items-center group/date">
-          <Calendar className="w-4 h-4 mr-1  transition-colors duration-300" />
-          <span className=" transition-colors duration-300">{date}</span>
+          <Calendar className="w-4 h-4 mr-1 transition-colors duration-300" />
+          <span className="transition-colors duration-300">{date}</span>
         </div>
         <div className="flex items-center group/location">
-          <MapPin className="w-4 h-4 mr-1  transition-colors duration-300" />
-          <span className=" transition-colors duration-300">{location}</span>
+          <MapPin className="w-4 h-4 mr-1 transition-colors duration-300" />
+          <span className="transition-colors duration-300">{location}</span>
         </div>
       </div>
       <ul className="space-y-2 mt-4">
@@ -68,7 +68,7 @@ const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }
 function WorkExperience() {
   const experiences = [
     {
-      role: "Full Stack Software Engineer",
+      role: "Full Stack So\u200Bftware Engineer",
       company: "RetailReady AI (YCombinator W'24)",
       date: "01/2024 - 08/2024",
       location: "San Francisco",
