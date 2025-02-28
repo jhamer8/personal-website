@@ -104,6 +104,16 @@ function Header({ className = "" }: HeaderProps) {
               </SheetClose>
               <SheetClose asChild>
                 <Link
+                  href="/projects"
+                  className={`text-lg font-medium hover:text-themeOrange ${
+                    pathname === "/projects" ? "text-themeOrange" : ""
+                  }`}
+                >
+                  Projects
+                </Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link
                   href="/contact"
                   className={`text-lg font-medium hover:text-themeOrange ${
                     pathname === "/contact" ? "text-themeOrange" : ""

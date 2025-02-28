@@ -43,7 +43,7 @@ const Education = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="list-disc list-inside text-slate-300"
           >
-            <li>Threads: Intelligence, Cybersecurity and Privacy</li>
+            <li>Threads: Devices, Cybersecurity and Privacy</li>
           </motion.ul>
         </motion.div>
         <hr className="my-4 border-slate-300" />

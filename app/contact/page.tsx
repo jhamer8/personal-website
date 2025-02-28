@@ -38,7 +38,7 @@ function Contact() {
           >
             {/* Map */}
             <motion.div 
-              className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="overflow-hidden "
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >

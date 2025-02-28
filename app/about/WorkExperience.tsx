@@ -104,7 +104,7 @@ function WorkExperience() {
   ];
 
   return (
-    <div className="rounded-lg border border-white w-full max-w-4xl blur-background mr-8">
+    <div className="rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8">
       <div className="p-8">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
