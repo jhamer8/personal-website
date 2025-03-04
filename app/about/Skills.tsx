@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const Skills = () => {
   return (
     <div className="rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8">
-      <div className="rounded-lg border border-white/20 w-full max-w-4xl blur-background sm:mr-8 p-8 bg-gradient-to-br from-white/5 to-white/10 shadow-lg">
+      <div className="p-8">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -68,8 +68,8 @@ const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }
 function WorkExperience() {
   const experiences = [
     {
-      role: "Full Stack So\u200Bftware Engineer",
-      company: "RetailReady AI (YCombinator W'24)",
+      role: "Full Stack Sof\u200Ctware Engineer",
+      company: "RetailReady AI (Y Combinator W'24)",
       date: "01/2024 - 08/2024",
       location: "San Francisco",
       highlights: [

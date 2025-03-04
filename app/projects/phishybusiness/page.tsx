@@ -51,18 +51,18 @@ function PhishyBusinessProject() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 overflow-auto dark:bg-gray-900">
-      <div className="rounded-lg border border-white/20 w-full max-w-5xl blur-background p-8 bg-gradient-to-br from-white/5 to-white/10 shadow-lg">
+      <div className="rounded-lg border border-white/20 w-full max-w-5xl blur-background p-4 sm:p-8 bg-gradient-to-br from-white/5 to-white/10 shadow-lg overflow-hidden">
         <div className="flex flex-col md:flex-row justify-between items-start md:gap-16 mb-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex-1"
+            className="flex-1 w-full"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
               <div className="p-3 rounded-lg text-cyan-400 bg-white/5">
                 <IconRobot size={32} />
               </div>
-              <h1 className="text-4xl font-semibold text-themeWhite">
+              <h1 className="text-4xl font-semibold text-themeWhite break-words">
                 PhishyBusiness
               </h1>
             </div>

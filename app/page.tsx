@@ -22,7 +22,7 @@ const suffix = [
 
 export default function Home() {
   return (
-    <div className="flex flex-1 justify-center w-full z-20  overflow-auto dark:bg-gray-900 p-6 min-h-screen min-w-[300px] items-center -mt-6">
+    <div className="flex flex-1 justify-center mt-48 md:mt-0 md:items-center w-full z-20  overflow-auto dark:bg-gray-900 p-6 min-h-screen min-w-[300px] lg:-mt-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
