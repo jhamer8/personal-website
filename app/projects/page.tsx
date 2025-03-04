@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import PhoneAgent from "../../public/phone-agent.png";
+import BankPhoto from "../../public/WildRanger/BankImage.png";
 
 function Projects() {
   const projects = [
@@ -45,6 +46,7 @@ function Projects() {
       borderColor: "border-emerald-500/30",
       tech: ["C#", "Unity", "Game Design"],
       path: "/projects/wildranger",
+      backgroundImage: BankPhoto,
     },
   ];
 
@@ -63,10 +65,10 @@ function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-300 mb-12 max-w-2xl"
+          className="text-gray-300 mb-12"
         >
-          A collection of my latest work and passion projects, showing some of
-          the things I like working on.
+          Some of my recent work and passion projects, showing some of
+          the things I find interesting/fun.
         </motion.p>
 
         <motion.div

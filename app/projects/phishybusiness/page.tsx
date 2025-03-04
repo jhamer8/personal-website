@@ -9,6 +9,8 @@ import {
   IconPhone,
   IconShieldCheck,
   IconBuildingBank,
+  IconArrowRight,
+  IconArrowLeft,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -232,6 +234,12 @@ function PhishyBusinessProject() {
             </p>
           </div>
         </motion.div>
+        <div className="mt-8 text-center">
+          <Link href="/projects" className="text-cyan-400 hover:text-cyan-300 flex items-center justify-center gap-2">
+            <IconArrowLeft size={16} />
+            <span>Back to Projects</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

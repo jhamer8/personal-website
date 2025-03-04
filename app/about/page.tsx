@@ -3,6 +3,7 @@ import React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
+import Skills from "./Skills";
 import { Suspense } from "react";
 
 function AboutContent() {
@@ -37,9 +38,19 @@ function AboutContent() {
         >
           Education
         </button>
+        <button
+          onClick={() => setActiveTab("skills")}
+          className={`px-4 py-2 transition-colors relative ${
+            activeTab === "skills"
+              ? "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-themeBlue"
+              : "text-gray-400 hover:text-white"
+          }`}
+        >
+          Skills
+        </button>
       </div>
       <div className="flex flex-1 flex-col items-center z-20 text-white">
-        {activeTab === "education" ? <Education /> : <WorkExperience />}
+        {activeTab === "education" ? <Education /> : activeTab === "skills" ? <Skills /> : <WorkExperience />}
       </div>
     </div>
   );

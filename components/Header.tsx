@@ -41,13 +41,6 @@ function Header({ className = "" }: HeaderProps) {
           }`}
         />
         <NavItem
-          text="SKILLS"
-          href="/skills"
-          className={`link ${
-            pathname === "/skills" ? "text-themeOrange" : "text-white"
-          }`}
-        />
-        <NavItem
           text="PROJECTS"
           href="/projects"
           className={`link ${
@@ -90,16 +83,6 @@ function Header({ className = "" }: HeaderProps) {
                   }`}
                 >
                   About
-                </Link>
-              </SheetClose>
-              <SheetClose asChild>
-                <Link
-                  href="/skills"
-                  className={`text-lg font-medium hover:text-themeOrange ${
-                    pathname === "/skills" ? "text-themeOrange" : ""
-                  }`}
-                >
-                  Skills
                 </Link>
               </SheetClose>
               <SheetClose asChild>
