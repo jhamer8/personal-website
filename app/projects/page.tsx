@@ -38,7 +38,7 @@ function Projects() {
       id: "wildranger",
       title: "Wild Ranger",
       description:
-        'A game coded in C# and Unity for a hackathon with the theme "collect". Players explore a wilderness as a ranger collecting endangered species.',
+        'A game coded in C# and Unity for a hackathon with the theme "collect". Players explore the wild west as a ranger collecting coins which they can invest and accrue interest on.',
       icon: <IconDeviceGamepad size={32} />,
       color: "from-green-500/20 to-emerald-500/20",
       textColor: "text-emerald-400",
