@@ -229,13 +229,15 @@ function PhishyBusinessProject() {
               Unfortunately, the website's phone call functionality is no longer
               operational. Despite the educational nature of this project,
               telephone providers flagged our service as a potential scam and
-              banned our numbers. The website remains available for
-              demonstration purposes only.
+              banned our numbers. Still, we kept up the website for viewing purposes.
             </p>
           </div>
         </motion.div>
         <div className="mt-8 text-center">
-          <Link href="/projects" className="text-cyan-400 hover:text-cyan-300 flex items-center justify-center gap-2">
+          <Link
+            href="/projects"
+            className="text-cyan-400 hover:text-cyan-300 flex items-center justify-center gap-2"
+          >
             <IconArrowLeft size={16} />
             <span>Back to Projects</span>
           </Link>
