@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://jadenh.dev',
   },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 const doppioOne = Doppio_One({ weight: "400", subsets: ["latin"] });
