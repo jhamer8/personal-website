@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
   robots: "index, follow",
   metadataBase: new URL("https://jadenh.dev"),
+  alternates: {
+    canonical: 'https://jadenh.dev',
+  },
 };
 
 const doppioOne = Doppio_One({ weight: "400", subsets: ["latin"] });

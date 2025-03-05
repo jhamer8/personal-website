@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PhoneAgent from "../../public/phone-agent.png";
 import BankPhoto from "../../public/WildRanger/BankImage.png";
+import { Metadata } from "next";
 
 function Projects() {
   const projects = [
@@ -51,25 +52,27 @@ function Projects() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 overflow-auto dark:bg-gray-900">
-      <div className="rounded-lg border border-white/20 w-full max-w-5xl blur-background p-8 bg-gradient-to-br from-white/5 to-white/10 shadow-lg">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-semibold text-themeWhite mb-2"
-        >
-          Projects
-        </motion.h1>
+    <main className="flex flex-col items-center justify-center min-h-screen p-6 overflow-auto dark:bg-gray-900">
+      <section className="rounded-lg border border-white/20 w-full max-w-5xl blur-background p-8 bg-gradient-to-br from-white/5 to-white/10 shadow-lg">
+        <header>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl font-semibold text-themeWhite mb-2"
+          >
+            Projects
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-gray-300 mb-12"
-        >
-          Some of my recent work and passion projects, showing some of
-          the things I find interesting/fun.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-300 mb-12"
+          >
+            Some of my recent work and passion projects, showing some of
+            the things I find interesting/fun.
+          </motion.p>
+        </header>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -78,77 +81,85 @@ function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
-            <Link href={project.path} key={project.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{
-                  scale: 1.03,
-                  boxShadow:
-                    "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                }}
-                className={`rounded-xl border ${project.borderColor} p-6 bg-gradient-to-br ${project.color} backdrop-blur-sm cursor-pointer h-full flex flex-col relative overflow-hidden group`}
-              >
-                {project.backgroundImage && (
-                  <div className="absolute inset-0 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-100">
-                    <Image
-                      src={project.backgroundImage}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                )}
-                <div className="flex items-center justify-between mb-4 relative z-10 transition-opacity duration-500 group-hover:opacity-0">
-                  <div
-                    className={`p-3 rounded-lg ${project.textColor} bg-white/5`}
-                  >
-                    {project.icon}
-                  </div>
-                  <motion.div whileHover={{ x: 5 }} className="text-gray-400">
-                    <IconArrowRight size={20} />
-                  </motion.div>
-                </div>
-
-                <h3
-                  className={`text-2xl font-medium mb-2 ${project.textColor} relative z-10 transition-opacity duration-500 group-hover:opacity-0`}
+            <article key={project.id} className="h-full">
+              <Link href={project.path} className="block h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow:
+                      "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  className={`rounded-xl border ${project.borderColor} p-6 bg-gradient-to-br ${project.color} backdrop-blur-sm cursor-pointer h-full flex flex-col relative overflow-hidden group`}
                 >
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-300 mb-6 flex-grow relative z-10 transition-opacity duration-500 group-hover:opacity-0">
-                  {typeof project.description === "string"
-                    ? project.description
-                    : project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-auto relative z-10 transition-opacity duration-500 group-hover:opacity-0">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300"
+                  {project.backgroundImage && (
+                    <div className="absolute inset-0 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-100">
+                      <Image
+                        src={project.backgroundImage}
+                        alt={`Background image for ${project.title} project`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                    </div>
+                  )}
+                  <header className="flex items-center justify-between mb-4 relative z-10 transition-opacity duration-500 group-hover:opacity-0">
+                    <div
+                      className={`p-3 rounded-lg ${project.textColor} bg-white/5`}
+                      aria-hidden="true"
                     >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </Link>
+                      {project.icon}
+                    </div>
+                    <motion.div whileHover={{ x: 5 }} className="text-gray-400" aria-hidden="true">
+                      <IconArrowRight size={20} />
+                    </motion.div>
+                  </header>
+
+                  <h2
+                    className={`text-2xl font-medium mb-2 ${project.textColor} relative z-10 transition-opacity duration-500 group-hover:opacity-0`}
+                  >
+                    {project.title}
+                  </h2>
+
+                  <div className="text-gray-300 mb-6 flex-grow relative z-10 transition-opacity duration-500 group-hover:opacity-0">
+                    {typeof project.description === "string"
+                      ? project.description
+                      : project.description}
+                  </div>
+
+                  <footer className="mt-auto relative z-10 transition-opacity duration-500 group-hover:opacity-0">
+                    <ul className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <li
+                          key={i}
+                          className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </footer>
+                </motion.div>
+              </Link>
+            </article>
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-gray-400 text-sm">
-            More projects coming soon. Stay tuned!
-          </p>
-        </motion.div>
-      </div>
-    </div>
+        <footer>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-gray-400 text-sm">
+              More projects coming soon. Stay tuned!
+            </p>
+          </motion.div>
+        </footer>
+      </section>
+    </main>
   );
 }
 
