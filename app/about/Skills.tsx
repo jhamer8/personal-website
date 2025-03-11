@@ -20,7 +20,7 @@ const Skills = () => {
         </motion.h1>
         <div className="text-md text-center font-light mb-8 space-y-4">
           <p className="leading-relaxed bg-white/10 p-4 rounded-lg shadow-inner transform hover:scale-105 transition-all duration-300 ease-in-out">
-            I currentlyspecialize in full stack development, with a strong foundation in data science and cloud technologies.
+            I currently specialize in full stack development, with a strong foundation in data science and cloud technologies.
             I'm always eager to tackle new challenges and expand my technical expertise.
           </p>
         </div>
