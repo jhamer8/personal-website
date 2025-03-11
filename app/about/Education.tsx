@@ -47,26 +47,48 @@ const Education = () => {
           </motion.ul>
         </motion.div>
         <hr className="my-4 border-slate-300" />
-        <CollapsibleSection title="Fall 2024 (In-Progress)">
+        <CollapsibleSection title="Spring 2025 (In-Progress)">
+          <PortfolioCard
+            name="Computer Networking"
+            number="CS 3251"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Intro to Information Security"
+            number="CS 3235"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Enterprise Cybersecurity Management"
+            number="CS 4239"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Combinatorics"
+            number="Math 3012"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+        </CollapsibleSection>
+        <CollapsibleSection title="Fall 2024">
           <PortfolioCard
             name="Computer Systems and Networks"
             number="CS 2200"
-            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-intelligence-computer-science-bs/"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
           />
           <PortfolioCard
             name="Human Dimension of Cybersecurity"
             number="CS 3237"
-            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-intelligence-computer-science-bs/"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
           />
           <PortfolioCard
             name="Introduction to Artificial Intelligence"
             number="CS 3600"
-            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-intelligence-computer-science-bs/"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
           />
           <PortfolioCard
             name="Introduction to Perception and Robotics"
             number="CS 3630"
-            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-intelligence-computer-science-bs/"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
           />
         </CollapsibleSection>
         <CollapsibleSection title="Fall 2023">

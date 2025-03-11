@@ -20,8 +20,8 @@ const Skills = () => {
         </motion.h1>
         <div className="text-md text-center font-light mb-8 space-y-4">
           <p className="leading-relaxed bg-white/10 p-4 rounded-lg shadow-inner transform hover:scale-105 transition-all duration-300 ease-in-out">
-            I specialize in web development and cybersecurity, with a strong foundation in data science and cloud technologies.
-            Always eager to tackle new challenges and expand my technical expertise.
+            I currentlyspecialize in full stack development, with a strong foundation in data science and cloud technologies.
+            I'm always eager to tackle new challenges and expand my technical expertise.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

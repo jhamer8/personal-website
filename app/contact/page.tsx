@@ -52,8 +52,8 @@ function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-                Connect on Social Media
+              <h2 className="text-2xl font-bold text-white">
+                Connect with me here
               </h2>
               <div className="flex space-x-4">
                 <a
