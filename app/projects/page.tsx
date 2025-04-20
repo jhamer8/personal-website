@@ -7,15 +7,38 @@ import {
   IconRobot,
   IconDeviceGamepad,
   IconArrowRight,
+  IconHandClick,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
 import PhoneAgent from "../../public/phone-agent.png";
 import BankPhoto from "../../public/WildRanger/BankImage.png";
+import SpecOpsTeam from "./spec-ops/images/team.jpg";
 import { Metadata } from "next";
 
 function Projects() {
   const projects = [
+    {
+      id: "specops",
+      title: "SpecOps",
+      description: (
+        <>
+          Built in 36 hours, SpecOps transforms your everyday environment into a tactical battleground. 
+          Using Snap Spectacles, players can aim, shoot, and score in real-time laser tag with friends, 
+          creating a new shared AR experience that makes each location unique.{" "}
+          <span className="text-cyan-400 font-bold border-b-2 border-cyan-500/50">
+            Immerse GT 2025 - AR Laser Tag
+          </span>
+        </>
+      ),
+      icon: <IconHandClick size={32} />,
+      color: "from-blue-500/20 to-cyan-500/20",
+      textColor: "text-cyan-400",
+      borderColor: "border-cyan-500/30",
+      tech: ["Snap Spectacles", "AR Technology", "Sync Kit", "World Mesh", "Colocation", "Hand Tracking"],
+      path: "/projects/spec-ops",
+      backgroundImage: SpecOpsTeam,
+    },
     {
       id: "phishybusiness",
       title: "PhishyBusiness",
@@ -78,7 +101,7 @@ function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
             <article key={project.id} className="h-full">
@@ -154,7 +177,7 @@ function Projects() {
             className="mt-12 text-center"
           >
             <p className="text-gray-400 text-sm">
-              More projects coming soon. Stay tuned!
+              As I continue to work on more projects, I'll update this page so stay tuned!
             </p>
           </motion.div>
         </footer>
