@@ -165,12 +165,13 @@ export default function Home() {
             <div className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed space-y-4">
               <p>
                 I'm Jaden Hamer, a computer science student at Georgia Tech with
-                a passion for building thoughtful products at the intersection
-                of software, data, and AI.
+                a passion for building thoughtful products at the intersection of
+                software, data, AI, and cybersecurity.
               </p>
               <p>
                 I love shipping clean, performant web experiences, exploring
-                intelligent systems, and bringing ideas to life end-to-end.
+                intelligent systems, and bringing ideas to life end-to-end — with
+                a strong interest in secure design and defensive practices.
               </p>
               <p>
                 Outside of code, you'll find me on a mountain bike trail,

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, FileText } from "lucide-react";
 
 interface ExperienceItemProps {
   role: string;
@@ -11,7 +11,14 @@ interface ExperienceItemProps {
   delay?: number;
 }
 
-const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }: ExperienceItemProps) => (
+const ExperienceItem = ({
+  role,
+  company,
+  date,
+  location,
+  highlights,
+  delay = 0,
+}: ExperienceItemProps) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -24,8 +31,8 @@ const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }
       animate={{ scale: 1 }}
       transition={{ duration: 0.3, delay: delay + 0.2 }}
     />
-    
-    <motion.div 
+
+    <motion.div
       className="space-y-2 p-6 rounded-lg bg-black/20 backdrop-blur-sm border border-white/10 hover:border-themeOrange/50 transition-all duration-300"
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
     >
@@ -52,9 +59,7 @@ const ExperienceItem = ({ role, company, date, location, highlights, delay = 0 }
             transition={{ duration: 0.3, delay: delay + 0.1 * index }}
             className="flex items-start group/highlight"
           >
-            <ArrowRight 
-              className="flex-shrink-0 w-5 h-5 mr-2 mt-1 text-themeOrange transform group-hover/highlight:translate-x-1 transition-transform duration-300" 
-            />
+            <ArrowRight className="flex-shrink-0 w-5 h-5 mr-2 mt-1 text-themeOrange transform group-hover/highlight:translate-x-1 transition-transform duration-300" />
             <span className="text-gray-300 group-hover/highlight:text-themeWhite transition-colors duration-300">
               {highlight}
             </span>
@@ -78,8 +83,8 @@ function WorkExperience() {
         "Created Flask backend with PostgreSQL database architecture and CI/CD pipeline",
         "Implemented advanced AI solutions using LLMs for routing guide summarization",
         "Managed on-site implementations across multiple warehouses in two countries",
-        "Led and mentored engineering team while maintaining sprint efficiency"
-      ]
+        "Led and mentored engineering team while maintaining sprint efficiency",
+      ],
     },
     {
       role: "Researcher",
@@ -88,8 +93,8 @@ function WorkExperience() {
       location: "Atlanta, GA",
       highlights: [
         "Built ML pipeline using Python, NLTK, and sentiment analysis for real-time Reddit market sentiment",
-        "Developed data preprocessing system for text cleaning and sentiment scoring"
-      ]
+        "Developed data preprocessing system for text cleaning and sentiment scoring",
+      ],
     },
     {
       role: "Data Science Intern",
@@ -98,20 +103,31 @@ function WorkExperience() {
       location: "Atlanta, GA",
       highlights: [
         "Developed synthetic data pipeline generating 300,000+ lines of healthcare claims using pandas, S3, and SageMaker",
-        "Engineered realistic synthetic home healthcare data"
-      ]
-    }
+        "Engineered realistic synthetic home healthcare data",
+      ],
+    },
   ];
 
   return (
     <div className="rounded-lg border border-white w-full max-w-4xl blur-background sm:mr-8">
       <div className="p-8">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-semibold text-themeWhite mb-12"
+          className="text-4xl font-semibold text-themeWhite mb-12 flex flex-row justify-between items-center"
         >
-          Work Experience
+          <div>Work Experience</div>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-md border-2 border-white hover:border-themeOrange/60 text-themeWhite hover:text-themeOrange transition-colors"
+            aria-label="Open resume (PDF) in new tab"
+            title="Open resume"
+          >
+            <FileText className="w-4 h-4" />
+            <span>Resume</span>
+          </a>
         </motion.h1>
         <div className="space-y-4">
           {experiences.map((experience, index) => (
