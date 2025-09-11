@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const FlipWords = ({
@@ -14,6 +14,9 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isInView, setIsInView] = useState<boolean>(true);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const longestWord = useRef<string>(words.reduce((a, b) => (a.length >= b.length ? a : b), words[0]));
 
   // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
@@ -23,63 +26,56 @@ export const FlipWords = ({
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!containerRef.current) return;
+    const node = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+      },
+      { root: null, threshold: 0.1 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isInView) return;
+    if (!isAnimating) {
+      const id = window.setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+      return () => window.clearTimeout(id);
+    }
+  }, [isAnimating, duration, startAnimation, isInView]);
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
+    <div ref={containerRef} className="relative inline-block align-baseline">
+      {/* Width/height sizer to prevent layout shift */}
+      <span className={cn("invisible whitespace-pre select-none", className)}>
+        {longestWord.current}
+      </span>
+
+      <AnimatePresence
+        onExitComplete={() => {
+          setIsAnimating(false);
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
-          position: "absolute",
-        }}
-        className={cn(
-          "z-10 inline-block relative text-left text-white dark:text-neutral-100 px-2",
-          className
-        )}
-        key={currentWord}
+        mode="popLayout"
       >
-        {currentWord.split("").map((letter, index) => (
-          <motion.span
-            key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: index * 0.08,
-              duration: 0.4,
-            }}
-            className="inline-block"
-          >
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+        <motion.div
+          key={currentWord}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4, position: "absolute", inset: 0 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className={cn(
+            "absolute inset-0 text-left text-white dark:text-neutral-100 will-change-transform",
+            className
+          )}
+        >
+          {currentWord}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 };

@@ -39,7 +39,9 @@ export default function Home() {
     };
 
     handleScroll();
-    scroller.addEventListener("scroll", handleScroll, { passive: true } as AddEventListenerOptions);
+    scroller.addEventListener("scroll", handleScroll, {
+      passive: true,
+    } as AddEventListenerOptions);
     const handleScrollEnd = () => {
       isProgrammaticScrollRef.current = false;
       const currentScrollTop = (scroller as HTMLElement).scrollTop;
@@ -49,8 +51,12 @@ export default function Home() {
 
     return () => {
       scroller.removeEventListener("scroll", handleScroll as EventListener);
-      scroller.removeEventListener("scrollend", handleScrollEnd as EventListener);
-      if (scrollEndTimeoutRef.current) window.clearTimeout(scrollEndTimeoutRef.current);
+      scroller.removeEventListener(
+        "scrollend",
+        handleScrollEnd as EventListener
+      );
+      if (scrollEndTimeoutRef.current)
+        window.clearTimeout(scrollEndTimeoutRef.current);
     };
   }, []);
 
@@ -59,7 +65,8 @@ export default function Home() {
     isProgrammaticScrollRef.current = true;
     setShowArrow(false);
     if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (scrollEndTimeoutRef.current) window.clearTimeout(scrollEndTimeoutRef.current);
+    if (scrollEndTimeoutRef.current)
+      window.clearTimeout(scrollEndTimeoutRef.current);
     scrollEndTimeoutRef.current = window.setTimeout(() => {
       isProgrammaticScrollRef.current = false;
       const scroller = document.querySelector("div.overflow-auto");
@@ -95,7 +102,7 @@ export default function Home() {
             className="flex flex-col items-center justify-center text-lg sm:text-xl text-center lg:text-2xl"
           >
             <h1 className="text-white sm:mb-0">Computer science student at</h1>
-            <div className="flex flex-row">
+            <div className="flex flex-row gap-2">
               <h1 className="text-white">Georgia Tech and</h1>
               <FlipWords words={suffix} className="text-themePurple" />
             </div>
@@ -143,23 +150,32 @@ export default function Home() {
       </section>
 
       {/* Bio Section */}
-      <section id="bio-section" className="min-h-screen w-full px-4 sm:px-6 py-20 md:py-24 flex items-center justify-center">
+      <section
+        id="bio-section"
+        className="min-h-screen w-full px-4 sm:px-6 py-20 md:py-24 flex items-center justify-center"
+      >
         <div className="max-w-3xl w-full mx-auto">
           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-8 md:p-10">
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6 ${doppioOne.className}`}>About Me</h2>
+            <h2
+              className={`text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6 ${doppioOne.className}`}
+            >
+              About Me
+            </h2>
             <div className="h-px w-full bg-white/10 mb-6 sm:mb-8" />
             <div className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed space-y-4">
               <p>
-                I'm Jaden Hamer, a computer science student at Georgia Tech with a passion for building thoughtful
-                products at the intersection of software, data, and AI.
+                I'm Jaden Hamer, a computer science student at Georgia Tech with
+                a passion for building thoughtful products at the intersection
+                of software, data, and AI.
               </p>
               <p>
-                I love shipping clean, performant web experiences, exploring intelligent systems, and bringing ideas to
-                life end-to-end.
+                I love shipping clean, performant web experiences, exploring
+                intelligent systems, and bringing ideas to life end-to-end.
               </p>
               <p>
-                Outside of code, you'll find me on a mountain bike trail, tinkering with new tech, or collaborating with
-                friends on creative projects.
+                Outside of code, you'll find me on a mountain bike trail,
+                tinkering with new tech, or collaborating with friends on
+                creative projects.
               </p>
             </div>
           </div>
