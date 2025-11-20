@@ -3,6 +3,7 @@ import { Doppio_One } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Jaden Hamer | Software Engineer",
@@ -57,6 +58,7 @@ export default function RootLayout({
             <div className="overflow-auto">{children}</div>
           </div>
         </AuroraBackground>
+        <Analytics />
       </body>
     </html>
   );
