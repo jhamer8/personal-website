@@ -4,7 +4,6 @@ import React from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconBrandReact, IconBrandPython, IconBrandJavascript, IconBrandTypescript, IconBrandGit, IconDatabase, IconBrandDocker, IconBulb, IconUsers, IconMessage, IconArrowsRandom, IconClock, IconBrain, IconPalette, IconUserStar, IconBrandNextjs, IconCloud, IconLock } from '@tabler/icons-react';
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { motion } from "framer-motion";
 
 const Skills = () => {
@@ -91,7 +90,7 @@ const SoftSkillsCard = () => (
 );
 
 const SoftSkillsBadges = () => (
-  <div className="flex flex-wrap gap-2 mb-6">
+  <div className="flex flex-wrap gap-3 mb-8">
     {[
       { icon: <IconBulb />, text: "Problem Solving" },
       { icon: <IconUsers />, text: "Team Collaboration" },
@@ -107,10 +106,10 @@ const SoftSkillsBadges = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 * index }}
+        className="bg-white hover:bg-gray-100 rounded-lg px-4 py-2 flex items-center gap-2 shadow-md transform hover:scale-105 transition-all duration-300 border border-gray-200"
       >
-        <HoverBorderGradient>
-          {badge.icon} {badge.text}
-        </HoverBorderGradient>
+        <span className="text-gray-700">{badge.icon}</span>
+        <span className="text-gray-800 font-medium text-sm">{badge.text}</span>
       </motion.div>
     ))}
   </div>
@@ -119,9 +118,17 @@ const SoftSkillsBadges = () => (
 const PassionsSection = () => (
   <>
     <h4 className="text-white text-2xl font-semibold mb-4">Passions</h4>
-    <div className="grid grid-cols-3 gap-4 auto-rows-fr">
+    <div className="flex flex-wrap gap-3">
       {['Cooking', 'BJJ', 'Hiking', 'Basketball', 'Mountain Biking'].map((passion, index) => (
-        <PassionCard key={index} passion={passion} className={index >= 3 ? 'col-span-3 sm:col-span-1' : ''} />
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.8 + (0.1 * index) }}
+          className="bg-white hover:bg-gray-100 rounded-lg px-4 py-2 shadow-md transform hover:scale-105 transition-all duration-300 border border-gray-200"
+        >
+          <span className="text-gray-800 font-medium text-sm">{passion}</span>
+        </motion.div>
       ))}
     </div>
   </>
@@ -174,16 +181,5 @@ const SkillBar = ({ skill, progress, icon }: { skill: string; progress: number; 
   </div>
 );
 
-const PassionCard = ({ passion, className }: { passion: string; className?: string }) => (
-  <div
-    className={`relative flex rounded-lg border content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap justify-center overflow-visible p-px decoration-clone w-full transform hover:scale-105 ${className}`}
-  >
-    <div className="w-full text-black z-10 bg-white px-4 py-2 rounded-[inherit] flex items-center justify-center h-full">
-      <p className="text-center font-medium">{passion}</p>
-    </div>
-    <div className="bg-gradient-to-br from-white to-slate-300 absolute z-0 flex-none inset-0 rounded-[inherit] overflow-hidden" style={{ filter: "blur(4px)" }} />
-    <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[inherit]" />
-  </div>
-);
 
 export default Skills;
