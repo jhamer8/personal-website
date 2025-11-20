@@ -161,17 +161,31 @@ export default function PortfolioCard({
   name,
   number,
   link,
+  isTA = false,
 }: {
   name: string;
   number: string;
   link: string;
+  isTA?: boolean;
 }) {
   return (
-    <div className="w-full h-full bg-themeWhite hover:bg-gray-300 rounded-lg transition-all duration-300 z-20">
+    <div className={cn(
+      "w-full h-full rounded-lg transition-all duration-300 z-20",
+      isTA 
+        ? "bg-blue-50 hover:bg-blue-100 border border-blue-200" 
+        : "bg-themeWhite hover:bg-gray-300"
+    )}>
       <div className="flex flex-row justify-between p-5 w-full">
         <div className="flex-grow">
           <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
-          <p className="text-lg text-gray-600">{number}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-lg text-gray-600">{number}</p>
+            {isTA && (
+              <span className="text-xs px-2 py-0.5 rounded-full bg-blue-200 text-blue-700 font-medium">
+                Teaching Assistant
+              </span>
+            )}
+          </div>
         </div>
         <div className="flex items-center mt-4 sm:mt-0">
           <a

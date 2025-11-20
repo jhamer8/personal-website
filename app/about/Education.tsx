@@ -47,7 +47,35 @@ const Education = () => {
           </motion.ul>
         </motion.div>
         <hr className="my-4 border-slate-300" />
-        <CollapsibleSection title="Spring 2025 (In-Progress)">
+        <CollapsibleSection title="Fall 2025 (In-Progress)">
+          <PortfolioCard
+            name="Computer Network Security"
+            number="CS 4262"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Digital Design"
+            number="ECE 2031"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Technical Communication"
+            number="LMC 3403"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Machine Learning for Finance VIP"
+            number="VIP 6603"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+          />
+          <PortfolioCard
+            name="Intro to Information Security"
+            number="CS 3235"
+            link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
+            isTA={true}
+          />
+        </CollapsibleSection>
+        <CollapsibleSection title="Spring 2025">
           <PortfolioCard
             name="Computer Networking"
             number="CS 3251"
@@ -69,6 +97,7 @@ const Education = () => {
             link="https://catalog.gatech.edu/programs/cybersecurity-privacy-devices-computer-science-bs/"
           />
         </CollapsibleSection>
+
         <CollapsibleSection title="Fall 2024">
           <PortfolioCard
             name="Computer Systems and Networks"
